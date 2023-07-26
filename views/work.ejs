@@ -1,0 +1,32 @@
+<%-include("header.ejs")%>
+<body>
+  <main>
+    <div class="box" id="heading">
+      <h1>
+        Work List
+      </h1>
+    </div>
+    <div class="box">
+      <%if(locals.addedItem){%>
+        <%work.forEach((element)=>{%>
+          <div class="item">
+            <input type="checkbox">
+            <p>
+              <%=element%>
+            </p>
+          </div>
+          <%})}%>
+    <form class="item" action="/work" method="post">
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off" />
+        <button type="submit" name="list">+</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <%- include("footer.ejs")%>
+  </footer>
+
+</body>
+
+</html>
