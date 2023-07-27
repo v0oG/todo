@@ -7,15 +7,14 @@
       </h1>
     </div>
     <div class="box">
-      <%if(locals.addedItem){%>
-        <%work.forEach((element)=>{%>
+        <%locals.work.forEach((element)=>{%>
           <div class="item">
             <input type="checkbox">
             <p>
               <%=element%>
             </p>
           </div>
-          <%})}%>
+          <%})%>
     <form class="item" action="/work" method="post">
         <input type="text" name="newItem" placeholder="New Item" autocomplete="off" />
         <button type="submit" name="list">+</button>
